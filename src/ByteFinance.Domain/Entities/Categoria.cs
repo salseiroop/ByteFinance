@@ -6,8 +6,6 @@ public class Categoria
 {
     public Guid Id { get; private set; }
     public string Nome { get; private set; } = string.Empty;
-
-    // Construtor privado exigido pelo EF Core para materializar objetos do banco
     private Categoria() { }
 
     public Categoria(string nome)

@@ -16,7 +16,7 @@ public class TransacaoMapping : IEntityTypeConfiguration<Transacao>
 
         builder.Property(t => t.Valor)
             .IsRequired()
-            .HasColumnType("decimal(18,2)"); // Garante precisão monetária correta
+            .HasColumnType("decimal(18,2)");
 
         builder.Property(t => t.Data)
             .IsRequired();
@@ -24,7 +24,6 @@ public class TransacaoMapping : IEntityTypeConfiguration<Transacao>
         builder.Property(t => t.Tipo)
             .IsRequired();
 
-        // Relacionamento restrito para evitar deleção em cascata indesejada
         builder.HasOne(t => t.Categoria)
             .WithMany()
             .HasForeignKey(t => t.CategoriaId)

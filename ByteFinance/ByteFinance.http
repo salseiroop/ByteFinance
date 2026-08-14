@@ -1,6 +1,0 @@
-@ByteFinance_HostAddress = http://localhost:5258
-
-GET {{ByteFinance_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

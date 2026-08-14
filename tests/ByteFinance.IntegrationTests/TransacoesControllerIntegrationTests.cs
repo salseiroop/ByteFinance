@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using System.Net.Http.Json;
-using ByteFinance.API; // <--- Adicione este using
+using ByteFinance.API; 
 using ByteFinance.Application.DTOs;
 using ByteFinance.Domain.Enums;
 using Microsoft.AspNetCore.Mvc.Testing;

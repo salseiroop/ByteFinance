@@ -12,7 +12,6 @@ public class Transacao
     public TipoTransacao Tipo { get; private set; }
     public Guid CategoriaId { get; private set; }
 
-    // Propriedade de navegação do EF Core
     public Categoria? Categoria { get; private set; }
 
     private Transacao() { }

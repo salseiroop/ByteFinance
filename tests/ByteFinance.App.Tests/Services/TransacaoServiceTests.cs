@@ -25,7 +25,6 @@ public class TransacaoServiceTests
     [Fact]
     async Task CriarAsync_ComCategoriaInexistente_DeveLancarDomainException()
     {
-        // Arrange
         var request = new TransacaoRequestDTO
         {
             Descricao = "Teste",
@@ -38,7 +37,6 @@ public class TransacaoServiceTests
         _categoriaRepoMock.Setup(r => r.ObterPorIdAsync(request.CategoriaId))
             .ReturnsAsync((Categoria?)null);
 
-        // Act & Assert
         var exception = await Assert.ThrowsAsync<DomainException>(() =>
             _service.CriarAsync(request));
 
