@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="ByteFinance.API/ByteFinance.API.csproj" />
+  <Project Path="ByteFinance.App.Tests/ByteFinance.App.Tests.csproj" />
+  <Project Path="ByteFinance.Application/ByteFinance.Application.csproj" />
+  <Project Path="ByteFinance.Domain.Tests/ByteFinance.Domain.Tests.csproj" />
+  <Project Path="ByteFinance.Domain/ByteFinance.Domain.csproj" />
+  <Project Path="ByteFinance.Infrastructure/ByteFinance.Infrastructure.csproj" />
+  <Project Path="ByteFinance.IntegrationTests/ByteFinance.IntegrationTests.csproj" />
+</Solution>
