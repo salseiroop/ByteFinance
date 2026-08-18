@@ -80,7 +80,7 @@ public class TransacaoService
     {
         var transacao = await _transacaoRepository.ObterPorIdAsync(id);
         if (transacao == null)
-            throw new DomainException("Transação não encontrada.");
+            throw new KeyNotFoundException("Transação não encontrada.");
 
         await _transacaoRepository.RemoverAsync(transacao);
     }

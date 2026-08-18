@@ -1,4 +1,5 @@
 using ByteFinance.API.Middleware;
+using ByteFinance.Application.Interfaces;
 using ByteFinance.Application.Services;
 using ByteFinance.Domain.Interfaces;
 using ByteFinance.Infrastructure.Data;
@@ -15,8 +16,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=bytefinance.db"));
 
+// Registro dos Repositórios
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
+
+// Registro dos Serviços da Aplicação
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 builder.Services.AddScoped<TransacaoService>();
 
 var app = builder.Build();
@@ -35,9 +40,6 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-
-    // Redireciona a raiz da URL (https://localhost:7224/) direto para o Swagger
-    app.MapGet("/", () => Results.Redirect("/swagger"));
 }
 
 app.UseHttpsRedirection();
